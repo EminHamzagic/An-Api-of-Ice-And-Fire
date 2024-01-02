@@ -155,6 +155,7 @@ body {
   font-size: 16px;
   font-style: italic;
   color: #fffde1;
+  width: 90%;
 }
 
 #prev,
@@ -236,7 +237,11 @@ body {
 
 @media only screen and (max-width: 600px) {
   .title {
+    text-align: center;
     font-size: 25px;
+  }
+  .container {
+    align-items: center;
   }
   .container button {
     width: 60%;
@@ -252,7 +257,8 @@ body {
     width: 70%;
   }
   .container p {
-    font-size: 15px;
+    font-size: 20px;
+    text-align: center;
   }
   #prev,
   #next {
@@ -271,6 +277,9 @@ body {
   .card {
     height: 31%;
     width: 90%;
+  }
+  .cardInfo p {
+    text-align: start;
   }
   .card h1 {
     font-size: 20px;
@@ -295,5 +304,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .container p:nth-child(2) {
+    font-size: 16px;
   }
 }
