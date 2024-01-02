@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/books.css" />
+    <style>
+      @font-face {
+        font-family: got;
+        src: url(../ImgsAndFonts/Game\ of\ Thrones.ttf);
+      }
+    </style>
+    <title>Books</title>
+  </head>
+  <body>
+    <div id="header">
+      <img
+        class="changeToWhite"
+        id="logo"
+        src="https://1000logos.net/wp-content/uploads/2020/09/Game-of-Thrones-logo.png"
+      />
+      <div class="hbuttons">
+        <div class="hbtn">Home</div>
+        <div class="hbtn">Books</div>
+        <div class="hbtn">Characters</div>
+        <div class="hbtn">Houses</div>
+        <div class="hbtn">Login</div>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+    <div class="container">
+      <div id="loading"><div class="lds-dual-ring"></div></div>
+      <div id="info">
+        <div id="closeBtn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="blist"></div>
+    </div>
+    <script src="../JS/redirectButtons.js"></script>
+    <script src="../JS/books.js"></script>
+  </body>
+</html>

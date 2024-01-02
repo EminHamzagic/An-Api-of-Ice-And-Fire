@@ -117,3 +117,9 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+@media only screen and (min-width: 1600px) {
+  .hbtn {
+    font-size: 26px;
+  }
+}

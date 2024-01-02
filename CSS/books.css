@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: got;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(18, 19, 24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  height: 70%;
+  /* padding: 8% 10% 8% 10%; */
+  /* position: absolute; */
+}
+
+.blist {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.blist::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  padding-left: 20px;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: ease 0.2s all;
+}
+
+.item:hover {
+  background-color: rgb(31, 32, 36);
+}
+
+.item h1 {
+  font-size: 30px;
+  width: 60%;
+}
+
+.item p {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.item:nth-child(odd) {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.item:nth-child(10) {
+  border-bottom: 1px solid white;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#info {
+  width: 80%;
+  height: 70%;
+  background-color: rgb(28, 29, 31);
+  position: absolute;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.2s all ease-in-out;
+}
+
+#info.active {
+  transform: scale(1);
+  display: flex;
+  opacity: 100;
+  animation-name: zoomIn;
+  animation-duration: 0.2s;
+}
+
+#closeBtn {
+  padding-top: 10px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  background-color: rgb(28, 29, 31);
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.bar:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.bar:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
