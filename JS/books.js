@@ -54,6 +54,7 @@ getBooks().then((data) => {
       p7.innerText = `Released: ${booksRaw[index].released}`;
       const p8 = document.createElement("p");
       p8.setAttribute("id", "povChar");
+      p8.setAttribute("title", "Click to see the list of pov characters");
       p8.innerText = `Pov Characters`;
       p8.innerHTML += `<div id="charMenu"></div>`;
       infoP1.appendChild(p1);
@@ -64,6 +65,11 @@ getBooks().then((data) => {
       infoP2.appendChild(p6);
       infoP2.appendChild(p7);
       infoP2.appendChild(p8);
+
+      p8.addEventListener("click", () => {
+        p8.classList.toggle("active");
+      });
+
       const charMenu = document.getElementById("charMenu");
       charMenu.innerHTML = "";
       for (let i = 0; i < booksRaw[index].povCharacters.length; i++) {

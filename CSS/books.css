@@ -17,8 +17,6 @@ body {
 .container {
   width: 80%;
   height: 70%;
-  /* padding: 8% 10% 8% 10%; */
-  /* position: absolute; */
 }
 
 .blist {
@@ -178,9 +176,22 @@ body {
   padding-left: 20px;
 }
 
+.infoContainer {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.infoContainer::-webkit-scrollbar {
+  display: none;
+}
+
 #infoP1 {
   width: 40%;
-  height: 80%;
+  height: 100%;
   padding-left: 20px;
   display: flex;
   flex-direction: column;
@@ -190,7 +201,7 @@ body {
 
 #infoP2 {
   width: 60%;
-  height: 80%;
+  height: 100%;
   padding-left: 20px;
   display: flex;
   flex-direction: column;
@@ -210,18 +221,29 @@ body {
 }
 
 #charMenu {
+  max-height: 50%;
   background-color: rgb(18, 19, 24);
   border-radius: 10px;
-  display: none;
+  border-bottom-left-radius: 0;
   position: absolute;
+  padding: 10px;
   bottom: 12%;
-  left: 58%;
+  left: 56%;
   flex-direction: column;
-  transition: 0.5s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   opacity: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  pointer-events: none;
+}
+
+#charMenu::-webkit-scrollbar {
+  display: none;
 }
 
 #povChar:hover * {
+  pointer-events: fill;
   display: flex;
   opacity: 1;
 }
@@ -230,10 +252,79 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 10px;
-  width: 180px;
-  height: 30px;
+  padding: 5px 0 5px 0;
+  width: 100%;
+  /* height: 30%; */
   text-decoration: none;
   font-size: 16px;
   pointer-events: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .item p {
+    display: none;
+  }
+  .item h1 {
+    width: 100%;
+    font-size: 25px;
+  }
+  .item:nth-child(10) {
+    border-bottom: 1px solid white;
+  }
+  #infoTitle {
+    width: 90%;
+
+    padding-left: 10%;
+    font-size: 30px;
+    text-align: center;
+    align-self: center;
+  }
+  #charMenu {
+    bottom: 3%;
+    left: 52%;
+  }
+  .infoContainer {
+    display: block;
+  }
+  #infoP1,
+  #infoP2 {
+    width: 100%;
+    height: 30vh;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .item h1 {
+    font-size: 45px;
+  }
+  .item p {
+    font-size: 30px;
+  }
+  #infoP1 p,
+  #infoP2 p {
+    font-size: 35px;
+  }
+  #infoTitle {
+    font-size: 50px;
+  }
+  .bar {
+    width: 55px;
+    height: 6px;
+  }
+  .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .bar:nth-child(2) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  #closeBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+  }
 }
