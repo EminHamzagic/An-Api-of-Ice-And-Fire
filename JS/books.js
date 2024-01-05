@@ -1,7 +1,3 @@
-fetch("https://www.anapioficeandfire.com/api/books")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
-
 async function getBooks() {
   const res = await fetch("https://www.anapioficeandfire.com/api/books");
   const data = await res.json();

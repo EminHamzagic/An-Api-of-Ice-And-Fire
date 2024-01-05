@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: got;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(18, 19, 24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#charContainer {
+  margin: 20px;
+  width: 80%;
+  height: 60%;
+  /* border: 1px solid white; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(28, 29, 31);
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  transition: 0.2s all ease-in-out;
+  animation-name: zoomIn;
+  animation-duration: 0.2s;
+}
+
+.item:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+  background-color: rgb(47, 48, 49);
+}
+
+.item h1 {
+  font-size: 13px;
+  color: white;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#paginator {
+  width: 80%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#paginator p {
+  color: white;
+  margin: 0 70px 0 70px;
+  text-decoration: underline;
+  transition: 0.2s all ease-in-out;
+  user-select: none;
+}
+
+#paginator p:hover {
+  color: rgb(233, 212, 97);
+  cursor: pointer;
+}
+
+#filters {
+  width: 80%;
+  height: 5%;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  position: relative;
+}
+
+.filtersDiv {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  color: white;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#filters button {
+  margin-left: 20px;
+  border: none;
+  font-size: 12px;
+  height: 95%;
+  padding: 0 10px 0 10px;
+  transition: 0.2s all ease-in-out;
+}
+
+#filters button:hover {
+  cursor: pointer;
+  background-color: rgb(28, 29, 31);
+  color: white;
+}
+
+#fil {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(18, 19, 24);
+  z-index: 10;
+  position: absolute;
+  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  transition: 0.8s all ease;
+}
+
+#fil.active {
+  left: 60%;
+  width: 40%;
+}
+
+#fil.active #filterToggle i {
+  transform: rotate(180deg);
+}
+
+#filterToggle i {
+  transition: 0.8s all ease-in-out;
+}
+
+#filterToggle {
+  color: white;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.aliveDiv {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}

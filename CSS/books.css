@@ -261,6 +261,9 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .item {
+    padding: 10px;
+  }
   .item p {
     display: none;
   }
@@ -272,7 +275,7 @@ body {
     border-bottom: 1px solid white;
   }
   #infoTitle {
-    width: 90%;
+    width: 85%;
 
     padding-left: 10%;
     font-size: 30px;
@@ -282,6 +285,12 @@ body {
   #charMenu {
     bottom: 3%;
     left: 52%;
+  }
+  #info {
+    width: 90%;
+    left: 5%;
+    height: 80%;
+    top: 13vh;
   }
   .infoContainer {
     display: block;
