@@ -1,5 +1,7 @@
 async function getBooks() {
-  const res = await fetch("https://www.anapioficeandfire.com/api/books");
+  const res = await fetch(
+    "https://www.anapioficeandfire.com/api/books?page=1&pageSize=50"
+  );
   const data = await res.json();
   return data;
 }
@@ -35,7 +37,7 @@ getBooks().then((data) => {
       infoP1.innerHTML = "";
       infoP2.innerHTML = "";
       const p1 = document.createElement("p");
-      p1.innerText = `Authors: ${booksRaw[index].authors[0]}`;
+      p1.innerText = `Authors: ${booksRaw[index].authors.toString()}`;
       const p2 = document.createElement("p");
       p2.innerText = `Country: ${booksRaw[index].country}`;
       const p3 = document.createElement("p");

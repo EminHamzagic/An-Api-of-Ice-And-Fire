@@ -8,6 +8,7 @@ var page = 1;
 
 const container = document.getElementById("charContainer");
 var filters = "";
+var charactersRaw = [];
 
 async function getCharacters() {
   const res = await fetch(
@@ -21,14 +22,62 @@ async function getCharacters() {
 
 const loadCharacters = (data) => {
   container.innerHTML = "";
-  data.map((el) => {
+  charactersRaw = data;
+  loadingScreen.style.display = "none";
+  data.map((el, i) => {
     const item = document.createElement("div");
     item.classList.add("item");
     const name = document.createElement("h1");
-    name.innerText = el.name ? el.name : el.aliases[0];
+    name.innerText = el.name ? el.name : '"' + el.aliases[0] + '"';
+    item.addEventListener("click", () => {
+      showInfo(charactersRaw[i]);
+    });
     item.appendChild(name);
     container.appendChild(item);
   });
+  const infoBox = document.createElement("div");
+  infoBox.setAttribute("id", "info");
+  infoBox.innerHTML = `<div id="closeBtn">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  </div>`;
+  const infoTitle = document.createElement("h1");
+  infoTitle.setAttribute("id", "infoTitle");
+  const infoContainer = document.createElement("div");
+  infoContainer.setAttribute("id", "infoCon");
+  infoBox.appendChild(infoTitle);
+  infoBox.appendChild(infoContainer);
+  container.appendChild(infoBox);
+  document.getElementById("closeBtn").addEventListener("click", () => {
+    const info = document.getElementById("info");
+    info.classList.toggle("active");
+  });
+};
+
+const showInfo = (char) => {
+  const info = document.getElementById("info");
+  info.classList.toggle("active");
+  const infoCon = document.getElementById("infoCon");
+  infoCon.innerHTML = "";
+  const name = document.getElementById("infoTitle");
+  name.innerText = char.name ? char.name : '"' + char.aliases[0] + '"';
+  Promise.all(char.books.map((book) => fetch(book).then((r) => r.json()))).then(
+    (books) => {
+      Promise.all(
+        char.allegiances.map((alleg) => fetch(alleg).then((r) => r.json()))
+      ).then((allegiances) => {
+        const alias = document.createElement("p");
+        alias.innerText = `Aliases: ${
+          char.aliases[0] === "" ? "No data" : char.aliases.toString()
+        }`;
+
+        const bron = document.createElement("p");
+        bron.innerText = `Born: ${char.born ? "No data" : char.born}`;
+        const died = document.createElement("p");
+        died.innerText = `Died: ${char.died ? "No data" : char.died}`;
+      });
+    }
+  );
 };
 
 document.getElementById("prev").addEventListener("click", () => {
@@ -54,10 +103,13 @@ const alive = document.getElementById("alive");
 const dead = document.getElementById("dead");
 
 document.getElementById("apply").addEventListener("click", () => {
-  if (male.checked === true) filters = "&gender=male";
-  else if (female.checked === true) filters = "&gender=female";
-  if (alive.checked === true) filters += "&isalive=true";
-  else if (dead.checked == true) filters += "&isalive=false";
+  let gender = "",
+    status = "";
+  if (male.checked === true) gender = "&gender=male";
+  else if (female.checked === true) gender = "&gender=female";
+  if (alive.checked === true) status = "&isalive=true";
+  else if (dead.checked == true) status = "&isalive=false";
+  filters = gender + status;
   getCharacters().then((data) => {
     loadCharacters(data);
   });
@@ -71,5 +123,7 @@ document.getElementById("reset").addEventListener("click", () => {
   dead.checked = false;
   getCharacters().then((data) => loadCharacters(data));
 });
+
+const loadingScreen = document.getElementById("loading");
 
 getCharacters().then((data) => loadCharacters(data));

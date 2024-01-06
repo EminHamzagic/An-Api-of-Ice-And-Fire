@@ -24,6 +24,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 10px;
+  position: relative;
 }
 
 .item {
@@ -85,6 +86,7 @@ body {
   display: flex;
   /* justify-content: space-around; */
   align-items: center;
+  justify-self: flex-start;
   position: relative;
 }
 
@@ -132,8 +134,8 @@ label {
 }
 
 #fil.active {
-  left: 60%;
-  width: 40%;
+  left: 92.5%;
+  width: 7.5%;
 }
 
 #fil.active #filterToggle i {
@@ -157,4 +159,101 @@ label {
   display: flex;
   /* justify-content: center; */
   align-items: center;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(28, 29, 31);
+  transform: scale(0);
+  transition: 0.2s all ease-in;
+}
+
+#info.active {
+  transform: scale(1);
+}
+
+#closeBtn {
+  padding-top: 10px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  background-color: rgb(28, 29, 31);
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.bar:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.bar:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+#infoTitle {
+  width: 100%;
+  height: 20%;
+  font-style: 40px;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+
+#infoCon {
+  width: 100%;
+  height: 80%;
+  border: 1px solid white;
 }
