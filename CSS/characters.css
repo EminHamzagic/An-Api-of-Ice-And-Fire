@@ -25,6 +25,7 @@ body {
   grid-template-rows: repeat(6, 1fr);
   gap: 10px;
   position: relative;
+  overflow: hidden;
 }
 
 .item {
@@ -188,7 +189,8 @@ label {
   }
 }
 
-#loading {
+#loading,
+#loadingInfo {
   width: 100%;
   height: 100%;
   display: flex;
@@ -197,19 +199,22 @@ label {
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 
 #info {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 100%;
   background-color: rgb(28, 29, 31);
-  transform: scale(0);
-  transition: 0.2s all ease-in;
+  opacity: 0;
+  transition: 0.4s all ease-in-out;
 }
 
 #info.active {
-  transform: scale(1);
+  opacity: 100;
+  top: 0;
 }
 
 #closeBtn {
@@ -255,5 +260,53 @@ label {
 #infoCon {
   width: 100%;
   height: 80%;
-  border: 1px solid white;
+  display: flex;
+  position: relative;
+  top: 20%;
+  opacity: 0;
+  transition: 0.4s all ease;
+}
+
+#infoCon #loadingInfo {
+  opacity: 100;
+}
+
+#infoCon.active {
+  top: 0;
+  opacity: 100;
+}
+
+#infoP1,
+#infoP2,
+#infoP3 {
+  width: 33%;
+  height: 100%;
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+#infoP1 p,
+#infoP2 p,
+#infoP3 p {
+  font-size: 18px;
+  color: white;
+  font-family: sans-serif;
+}
+
+#infoP3 {
+  width: 34%;
+  height: 100%;
+  /* border: 1px solid white; */
+}
+
+@media only screen and (max-width: 600px) {
+  #charContainer {
+    /* height: 250vh; */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+  }
 }
