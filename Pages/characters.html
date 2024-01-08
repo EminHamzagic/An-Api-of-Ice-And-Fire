@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../CSS/header.css" />
     <link rel="stylesheet" href="../CSS/characters.css" />
     <link
@@ -35,43 +41,76 @@
         <div class="hbtn">Login</div>
       </div>
       <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <span class="hbar"></span>
+        <span class="hbar"></span>
+        <span class="hbar"></span>
       </div>
     </div>
-    <div id="filters">
-      <div class="filtersDiv">
-        <!-- <input type="checkbox" name="isalive" id="isalive" /> -->
-        <label for="">IsAlive</label>
-        <div class="aliveDiv">
-          <div>
-            <input type="radio" name="status" id="alive" />
-            <label for="alive">Yes</label>
-          </div>
-          <div>
-            <input type="radio" name="status" id="dead" />
-            <label for="dead">no</label>
-          </div>
+    <div id="filter" class="btn-group dropright">
+      <button
+        id="btn"
+        type="button"
+        class="btn btn-secondary dropdown-toggle"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Filters
+      </button>
+      <div class="dropdown-menu">
+        <div>
+          <input type="radio" name="status" id="alive" />
+          <label for="alive">Alive</label>
+          <input type="radio" name="status" id="dead" />
+          <label for="dead">Dead</label>
+        </div>
+        <div>
+          <input type="radio" name="gender" id="male" />
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" />
+          <label for="female">Female</label>
+        </div>
+        <div>
+          <button class="filterBtn" id="apply">Apply</button>
+          <button class="filterBtn" id="reset">Reset</button>
         </div>
       </div>
-      <div class="filtersDiv">
-        <input type="radio" name="gender" id="male" />
-        <label for="male">Male</label>
+    </div>
+    <!-- <div id="filters">
+      <div class="filtersContainer">
+        <div class="filtersDiv">
+          <label for="">IsAlive</label>
+          <div class="aliveDiv">
+            <div>
+              <input type="radio" name="status" id="alive" />
+              <label for="alive">Yes</label>
+            </div>
+            <div>
+              <input type="radio" name="status" id="dead" />
+              <label for="dead">no</label>
+            </div>
+          </div>
+        </div>
+        <div class="filtersDiv">
+          <input type="radio" name="gender" id="male" />
+          <label for="male">Male</label>
+        </div>
+        <div class="filtersDiv">
+          <input type="radio" name="gender" id="female" />
+          <label for="female">Female</label>
+        </div>
       </div>
-      <div class="filtersDiv">
-        <input type="radio" name="gender" id="female" />
-        <label for="female">Female</label>
+      <div class="filterButtons">
+        <button id="apply">Apply</button>
+        <button id="reset">Reset</button>
       </div>
-      <button id="apply">Apply filters</button>
-      <button id="reset">Reset filters</button>
       <div id="fil">
         <a title="click to toggle filters menu" id="filterToggle" href=""
           ><i class="fa-solid fa-chevron-right"></i>&nbsp;
           <p>Filter</p></a
         >
       </div>
-    </div>
+    </div> -->
     <div id="charContainer">
       <div id="loading">
         <div class="lds-dual-ring"></div>
@@ -82,6 +121,21 @@
       <p id="prev">Prev</p>
       <p id="next">Next</p>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
     <script src="../JS/redirectButtons.js"></script>
     <script src="../JS/header.js"></script>
     <script src="../JS/characters.js"></script>
