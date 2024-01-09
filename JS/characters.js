@@ -6,10 +6,10 @@ var charactersRaw = [];
 
 async function getCharacters() {
   const res = await fetch(
-    `https://www.anapioficeandfire.com/api/characters?page=${page}&pageSize=24` +
+    `https://www.anapioficeandfire.com/api/characters?page=${page}&pageSize=30` +
       filters
   );
-  console.log(filters);
+
   const data = await res.json();
   return data;
 }
@@ -39,7 +39,7 @@ const loadCharacters = (data) => {
   infoTitle.setAttribute("id", "infoTitle");
   const infoContainer = document.createElement("div");
   infoContainer.setAttribute("id", "infoCon");
-  infoContainer.innerHTML = `<div id="loadingInfo"><div class="lds-dual-ring"></div></div>`;
+  infoBox.innerHTML += `<div id="loadingInfo"><div class="lds-dual-ring"></div></div>`;
   infoBox.appendChild(infoTitle);
   infoBox.appendChild(infoContainer);
   container.appendChild(infoBox);
@@ -161,8 +161,10 @@ document.getElementById("prev").addEventListener("click", () => {
 });
 
 document.getElementById("next").addEventListener("click", () => {
-  page++;
-  getCharacters().then((data) => loadCharacters(data));
+  if (charactersRaw.length === 30) {
+    page++;
+    getCharacters().then((data) => loadCharacters(data));
+  }
 });
 
 // document.getElementById("filterToggle").addEventListener("click", (e) => {
@@ -175,27 +177,27 @@ const female = document.getElementById("female");
 const alive = document.getElementById("alive");
 const dead = document.getElementById("dead");
 
-// document.getElementById("apply").addEventListener("click", () => {
-//   let gender = "",
-//     status = "";
-//   if (male.checked === true) gender = "&gender=male";
-//   else if (female.checked === true) gender = "&gender=female";
-//   if (alive.checked === true) status = "&isalive=true";
-//   else if (dead.checked == true) status = "&isalive=false";
-//   filters = gender + status;
-//   getCharacters().then((data) => {
-//     loadCharacters(data);
-//   });
-// });
+document.getElementById("apply").addEventListener("click", () => {
+  let gender = "",
+    status = "";
+  if (male.checked === true) gender = "&gender=male";
+  else if (female.checked === true) gender = "&gender=female";
+  if (alive.checked === true) status = "&isalive=true";
+  else if (dead.checked == true) status = "&isalive=false";
+  filters = gender + status;
+  getCharacters().then((data) => {
+    loadCharacters(data);
+  });
+});
 
-// document.getElementById("reset").addEventListener("click", () => {
-//   filters = "";
-//   male.checked = false;
-//   female.checked = false;
-//   alive.checked = false;
-//   dead.checked = false;
-//   getCharacters().then((data) => loadCharacters(data));
-// });
+document.getElementById("reset").addEventListener("click", () => {
+  filters = "";
+  male.checked = false;
+  female.checked = false;
+  alive.checked = false;
+  dead.checked = false;
+  getCharacters().then((data) => loadCharacters(data));
+});
 
 const loadingScreen = document.getElementById("loading");
 

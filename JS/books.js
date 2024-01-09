@@ -55,14 +55,8 @@ getBooks().then((data) => {
       p8.setAttribute("title", "Click to see the list of pov characters");
       p8.innerText = `Pov Characters`;
       p8.innerHTML += `<div id="charMenu"></div>`;
-      infoP1.appendChild(p1);
-      infoP1.appendChild(p2);
-      infoP1.appendChild(p3);
-      infoP1.appendChild(p4);
-      infoP2.appendChild(p5);
-      infoP2.appendChild(p6);
-      infoP2.appendChild(p7);
-      infoP2.appendChild(p8);
+      infoP1.append(p1, p2, p3, p4);
+      infoP2.append(p5, p6, p7, p8);
 
       p8.addEventListener("click", () => {
         p8.classList.toggle("active");

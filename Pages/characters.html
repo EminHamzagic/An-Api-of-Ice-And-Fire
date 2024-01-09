@@ -46,71 +46,38 @@
         <span class="hbar"></span>
       </div>
     </div>
-    <div id="filter" class="btn-group dropright">
-      <button
-        id="btn"
-        type="button"
-        class="btn btn-secondary dropdown-toggle"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Filters
-      </button>
-      <div class="dropdown-menu">
-        <div>
-          <input type="radio" name="status" id="alive" />
-          <label for="alive">Alive</label>
-          <input type="radio" name="status" id="dead" />
-          <label for="dead">Dead</label>
-        </div>
-        <div>
-          <input type="radio" name="gender" id="male" />
-          <label for="male">Male</label>
-          <input type="radio" name="gender" id="female" />
-          <label for="female">Female</label>
-        </div>
-        <div>
-          <button class="filterBtn" id="apply">Apply</button>
-          <button class="filterBtn" id="reset">Reset</button>
+    <div id="filters">
+      <div class="btn-group dropright">
+        <button
+          id="btn"
+          type="button"
+          class="btn btn-secondary dropdown-toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Filters
+        </button>
+        <div class="dropdown-menu">
+          <div>
+            <input type="radio" name="status" id="alive" />
+            <label for="alive">Alive</label>
+            <input type="radio" name="status" id="dead" />
+            <label for="dead">Dead</label>
+          </div>
+          <div>
+            <input type="radio" name="gender" id="male" />
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" />
+            <label for="female">Female</label>
+          </div>
+          <div>
+            <button class="filterBtn" id="apply">Apply</button>
+            <button class="filterBtn" id="reset">Reset</button>
+          </div>
         </div>
       </div>
     </div>
-    <!-- <div id="filters">
-      <div class="filtersContainer">
-        <div class="filtersDiv">
-          <label for="">IsAlive</label>
-          <div class="aliveDiv">
-            <div>
-              <input type="radio" name="status" id="alive" />
-              <label for="alive">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="status" id="dead" />
-              <label for="dead">no</label>
-            </div>
-          </div>
-        </div>
-        <div class="filtersDiv">
-          <input type="radio" name="gender" id="male" />
-          <label for="male">Male</label>
-        </div>
-        <div class="filtersDiv">
-          <input type="radio" name="gender" id="female" />
-          <label for="female">Female</label>
-        </div>
-      </div>
-      <div class="filterButtons">
-        <button id="apply">Apply</button>
-        <button id="reset">Reset</button>
-      </div>
-      <div id="fil">
-        <a title="click to toggle filters menu" id="filterToggle" href=""
-          ><i class="fa-solid fa-chevron-right"></i>&nbsp;
-          <p>Filter</p></a
-        >
-      </div>
-    </div> -->
     <div id="charContainer">
       <div id="loading">
         <div class="lds-dual-ring"></div>

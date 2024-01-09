@@ -19,9 +19,8 @@ body {
   margin: 20px;
   width: 80%;
   height: 60%;
-  /* border: 1px solid white; */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 10px;
   position: relative;
@@ -80,107 +79,6 @@ body {
   color: rgb(233, 212, 97);
   cursor: pointer;
 }
-/* 
-#filters {
-  width: 80%;
-  height: 5%;
-  display: flex;
-  
-  align-items: center;
-  justify-self: flex-start;
-  position: relative;
-}
-
-.filtersDiv {
-  margin: 10px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 20%;
-}
-
-.filtersDiv div {
-  width: 100%;
-}
-
-.filtersDiv:nth-child(1) {
-  width: 60%;
-}
-
-label {
-  color: white;
-  font-size: 12px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.filterButtons {
-  width: 70%;
-  height: 100%;
-}
-
-.filterButtons button {
-  margin-left: 20px;
-  width: 11%;
-  border: none;
-  font-size: 12px;
-  height: 95%;
-  
-  transition: 0.2s all ease-in-out;
-}
-
-.filterButtons button:hover {
-  cursor: pointer;
-  background-color: rgb(28, 29, 31);
-  color: white;
-}
-
-.filtersContainer {
-  width: 35%;
-  display: flex;
-  height: 100%;
-}
-
-#fil {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(18, 19, 24);
-  z-index: 10;
-  position: absolute;
-  left: -10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 10px;
-  transition: 0.8s all ease;
-}
-
-#fil.active {
-  left: 92.5%;
-  width: 7.5%;
-}
-
-#fil.active #filterToggle i {
-  transform: rotate(180deg);
-}
-
-#filterToggle i {
-  transition: 0.8s all ease-in-out;
-}
-
-#filterToggle {
-  color: white;
-  height: 100%;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-}
-
-.aliveDiv {
-  display: flex;
-  align-items: center;
-} */
 
 .lds-dual-ring {
   display: inline-block;
@@ -301,7 +199,6 @@ label {
 #infoP3 {
   width: 33%;
   height: 100%;
-  /* border: 1px solid white; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -320,17 +217,21 @@ label {
 #infoP3 {
   width: 34%;
   height: 100%;
-  /* border: 1px solid white; */
 }
 
-#filter {
-  justify-self: flex-start;
+#filters {
+  width: 80%;
+  height: 5%;
+  display: flex;
+}
+
+.dropright {
+  height: 100%;
 }
 
 #btn {
   background-color: rgb(18, 19, 24);
   border: none;
-  /* color: blue; */
 }
 
 .dropdown-menu {
@@ -358,82 +259,16 @@ label {
 
 @media only screen and (max-width: 600px) {
   body {
-    margin-top: 30%;
+    margin-top: 25%;
+    height: 150vh;
   }
   #header {
     background-color: rgb(18, 19, 24);
   }
   #charContainer {
-    height: 120%;
+    height: 120vh;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-  }
-  #filters {
-    /* width: 50%; */
-    /* height: 10%; */
-    /* display: none; */
-    flex-wrap: nowrap;
-    margin-bottom: 10%;
-  }
-  .filtersDiv {
-    width: 100%;
-    margin: 0;
-    height: 30%;
-  }
-  .filtersDiv:nth-child(1) {
-    width: 100%;
-  }
-  .aliveDiv {
-    width: 100%;
-  }
-  .filtersContainer {
-    width: 60%;
-    height: 200%;
-    flex-direction: column;
-    /* display: none; */
-  }
-  .filterButtons {
-    height: 200%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  #fil {
-    width: 105%;
-    height: 200%;
-    top: -20px;
-    align-items: flex-start;
-    /* display: block; */
-  }
-  #fil.active {
-    top: 150%;
-    width: 105%;
-    left: -10px;
-    height: 80%;
-  }
-  .filterButtons button {
-    width: 80%;
-    height: 40%;
-    /* display: none; */
-  }
-
-  #filterToggle i {
-    transition: 0.8s all ease-in-out;
-    transform: rotate(90deg);
-  }
-  #fil.active #filterToggle i {
-    transform: rotate(270deg);
-  }
-
-  #filterToggle {
-    /* color: white; */
-    height: 20%;
-    /* text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-size: 15px; */
+    grid-template-rows: repeat(15, 1fr);
   }
   #info {
     display: flex;
@@ -452,7 +287,6 @@ label {
   #infoTitle {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     width: 76%;
     text-align: center;
     padding: 20px;
@@ -460,7 +294,6 @@ label {
   }
   #infoCon {
     flex-direction: column;
-    /* overflow: scroll; */
     height: 150vh;
   }
   #infoP1,

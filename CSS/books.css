@@ -65,8 +65,8 @@ body {
   border-bottom: 1px solid white;
 }
 
-.item:nth-child(10) {
-  border-bottom: 2px solid white;
+.item:nth-child(12) {
+  border-bottom: 1px solid white;
 }
 
 #loading {
