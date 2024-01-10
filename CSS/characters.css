@@ -257,6 +257,55 @@ label {
   border: none;
 }
 
+@media only screen and (min-width: 1600px) {
+  #paginator p {
+    font-size: 28px;
+  }
+  .item h1 {
+    font-size: 22px;
+  }
+  .bar {
+    width: 55px;
+    height: 6px;
+  }
+  .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .bar:nth-child(2) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  #closeBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+  }
+  #infoTitle {
+    font-size: 50px;
+  }
+  #infoP1 p,
+  #infoP2 p,
+  #infoP3 p {
+    font-size: 30px;
+  }
+  .btn {
+    font-size: 25px;
+  }
+  .dropdown-menu {
+    width: 350px;
+  }
+  label {
+    font-size: 15px;
+  }
+  .filterBtn {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   body {
     margin-top: 25%;

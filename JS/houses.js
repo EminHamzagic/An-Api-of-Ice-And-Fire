@@ -1,4 +1,4 @@
-var page = 21;
+var page = 1;
 var housesRaw = [];
 
 const container = document.getElementById("housesContainer");
@@ -184,18 +184,21 @@ document.getElementById("apply").addEventListener("click", () => {
   if (yawpn.checked === true) wpn = "&hasAncestralWeapons=true";
   else if (nawpn.checked === true) wpn = "&hasAncestralWeapons=false";
   filters = word + title + seat + dOut + wpn;
-  getHouses().then((data) => {
-    loadHouses(data);
-  });
+  getHouses().then((data) => loadHouses(data));
 });
 
 document.getElementById("reset").addEventListener("click", () => {
   filters = "";
-  word.checked = false;
-  title.checked = false;
-  seat.checked = false;
-  dOut.checked = false;
-  wpn.checked = false;
+  yword.checked = false;
+  nword.checked = false;
+  ytitle.checked = false;
+  ntitle.checked = false;
+  yseat.checked = false;
+  nseat.checked = false;
+  ydiedOut.checked = false;
+  ndiedOut.checked = false;
+  yawpn.checked = false;
+  nawpn.checked = false;
   getHouses().then((data) => loadHouses(data));
 });
 

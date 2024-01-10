@@ -39,7 +39,6 @@ const loadCharacters = (data) => {
   infoTitle.setAttribute("id", "infoTitle");
   const infoContainer = document.createElement("div");
   infoContainer.setAttribute("id", "infoCon");
-  infoBox.innerHTML += `<div id="loadingInfo"><div class="lds-dual-ring"></div></div>`;
   infoBox.appendChild(infoTitle);
   infoBox.appendChild(infoContainer);
   container.appendChild(infoBox);
@@ -166,11 +165,6 @@ document.getElementById("next").addEventListener("click", () => {
     getCharacters().then((data) => loadCharacters(data));
   }
 });
-
-// document.getElementById("filterToggle").addEventListener("click", (e) => {
-//   document.getElementById("fil").classList.toggle("active");
-//   e.preventDefault();
-// });
 
 const male = document.getElementById("male");
 const female = document.getElementById("female");
