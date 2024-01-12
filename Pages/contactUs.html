@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/contactUs.css" />
+    <style>
+      @font-face {
+        font-family: got;
+        src: url(../ImgsAndFonts/Game\ of\ Thrones.ttf);
+      }
+    </style>
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <div id="header">
+      <img
+        class="changeToWhite"
+        id="logo"
+        src="https://1000logos.net/wp-content/uploads/2020/09/Game-of-Thrones-logo.png"
+      />
+      <div class="hbuttons">
+        <div class="hbtn">Home</div>
+        <div class="hbtn">Books</div>
+        <div class="hbtn">Characters</div>
+        <div class="hbtn">Houses</div>
+        <div class="hbtn current">Contact Us</div>
+        <div class="hbtn">Login</div>
+      </div>
+      <div class="hamburger">
+        <span class="hbar"></span>
+        <span class="hbar"></span>
+        <span class="hbar"></span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="contactUsDiv">
+        <div class="contactUsInfo">
+          <h1>Contact Us</h1>
+          <p>
+            If you have any more questions, please fill in your name and last
+            name, email and message you want to send, and we will try to get in
+            touch as soon as we can so we could help
+          </p>
+          <button>Send Message</button>
+        </div>
+        <div class="tFieldName">
+          <div class="tField">
+            <label for="fname">First Name</label>
+            <input placeholder="First Name" type="text" id="fname" />
+            <p class="inputInfo">&nbsp;</p>
+          </div>
+          <div class="tField">
+            <label for="lname">Last Name</label>
+            <input placeholder="Last Name" type="text" id="lname" />
+            <p class="inputInfo">&nbsp;</p>
+          </div>
+        </div>
+        <div class="tField">
+          <label for="email">Email</label>
+          <input placeholder="Email" type="text" id="email" />
+          <p class="inputInfo">&nbsp;</p>
+        </div>
+        <div class="tArea">
+          <label for="msg">Message:</label>
+          <textarea
+            placeholder="Message"
+            name="msg"
+            id="msg"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <p class="inputInfo">&nbsp;</p>
+        </div>
+      </div>
+    </div>
+    <script src="../JS/redirectButtons.js"></script>
+    <script src="../JS/header.js"></script>
+    <script src="../JS/contactUs.js"></script>
+  </body>
+</html>

@@ -14,3 +14,7 @@ btns[2].addEventListener("click", () => {
 btns[3].addEventListener("click", () => {
   location.href = "houses.html";
 });
+
+btns[4].addEventListener("click", () => {
+  location.href = "contactUs.html";
+});
