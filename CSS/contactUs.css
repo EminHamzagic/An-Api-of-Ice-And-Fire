@@ -85,12 +85,10 @@ body {
   width: 49%;
   height: 100%;
   display: flex;
-  /* align-items: center; */
   justify-content: space-evenly;
   flex-direction: column;
   color: white;
   font-size: 14px;
-  /* margin-right: 5px; */
 }
 
 .tField:nth-child(3) {
@@ -110,7 +108,7 @@ body {
 }
 
 .tField input:focus {
-  outline: none;
+  outline: 2px solid rgb(57, 57, 58);
 }
 
 .tFieldName {
@@ -151,4 +149,74 @@ body {
 .inputInfo {
   font-size: 12px;
   font-family: sans-serif;
+}
+
+@media only screen and (min-width: 1600px) {
+  .contactUsInfo h1 {
+    font-size: 45px;
+  }
+  .contactUsInfo p {
+    font-size: 25px;
+    padding-bottom: 32%;
+  }
+  .contactUsInfo button {
+    font-size: 25px;
+  }
+  .tField {
+    font-size: 20px;
+  }
+  .tArea {
+    font-size: 20px;
+  }
+  .tField input {
+    font-size: 23px;
+  }
+  .tArea textarea {
+    font-size: 23px;
+  }
+  .inputInfo {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    height: 130vh;
+  }
+  .contactUsDiv {
+    width: 90%;
+  }
+  .contactUsInfo {
+    height: 40%;
+    width: 100%;
+  }
+  .contactUsInfo h1 {
+    font-size: 25px;
+  }
+  .contactUsInfo button {
+    height: 30%;
+    width: 90%;
+  }
+  .contactUsDiv {
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .tFieldName {
+    width: 90%;
+    height: 12%;
+  }
+  .tField:nth-child(3) {
+    height: 14%;
+    width: 90%;
+  }
+  .tField {
+    font-size: 12px;
+  }
+  .tField input {
+    height: 40%;
+  }
+  .tArea {
+    width: 90%;
+    height: 30%;
+  }
 }
