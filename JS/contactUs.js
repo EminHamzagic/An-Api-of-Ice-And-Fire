@@ -58,4 +58,20 @@ btn.addEventListener("click", () => {
     inputInfo[3].innerHTML = "Must contain a message!";
     inputInfo[3].style.color = "red";
   }
+  if (
+    emailRegex.test(email.value) &&
+    nameRegex.test(fname.value) &&
+    nameRegex.test(lname.value) &&
+    msg.value
+  ) {
+    document.getElementById("response").classList.toggle("active");
+    fname.value = "";
+    lname.value = "";
+    email.value = "";
+    msg.value = "";
+  }
+});
+
+document.getElementById("closeBtn").addEventListener("click", () => {
+  document.getElementById("response").classList.toggle("active");
 });
