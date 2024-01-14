@@ -18,3 +18,7 @@ btns[3].addEventListener("click", () => {
 btns[4].addEventListener("click", () => {
   location.href = "contactUs.html";
 });
+
+btns[5].addEventListener("click", () => {
+  location.href = "login.html";
+});

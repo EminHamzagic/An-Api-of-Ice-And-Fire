@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: got;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(18, 19, 24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginContainer {
+  width: 30%;
+  height: 65%;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.tField {
+  width: 90%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.tField input {
+  height: 35%;
+  font-family: sans-serif;
+  padding-left: 5px;
+  font-size: 15px;
+  background-color: rgb(48, 48, 49);
+  border: 2px solid rgb(35, 35, 36);
+  border-radius: 5px;
+  color: white;
+}
+
+.tField input:focus {
+  outline: 1px solid rgb(255, 255, 255);
+}
+
+#loginBtn {
+  width: 90%;
+  height: 15%;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#loginBtn:hover {
+  background-color: rgb(48, 48, 49);
+  color: white;
+}
+
+#loginBtn:active {
+  background-color: rgb(102, 102, 104);
+}
+
+.inputInfo {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+@media only screen and (min-width: 1600px) {
+  #loginContainer h1 {
+    font-size: 60px;
+  }
+  .tField label {
+    font-size: 25px;
+  }
+  .tField input {
+    font-size: 28px;
+  }
+  #loginBtn {
+    font-size: 40px;
+  }
+  .inputInfo {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #loginContainer {
+    width: 80%;
+    height: 60%;
+  }
+}
