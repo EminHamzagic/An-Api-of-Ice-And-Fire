@@ -72,6 +72,7 @@ body {
 .inputInfo {
   font-size: 12px;
   font-family: sans-serif;
+  color: red;
 }
 
 @media only screen and (min-width: 1600px) {
