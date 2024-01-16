@@ -18,14 +18,11 @@
 }
 
 input.check-toggle-round-flat:checked ~ .off {
-  /* color: #f36f25; */
   color: rgb(48, 48, 49);
-  /* color: white; */
 }
 
 input.check-toggle-round-flat:checked ~ .on {
   color: #fff;
-  /* color: rgb(48, 48, 49); */
 }
 
 .switch > span.on {
@@ -33,10 +30,6 @@ input.check-toggle-round-flat:checked ~ .on {
   padding-left: 2px;
   color: #f36f25;
   color: rgb(48, 48, 49);
-  /* color: aqua;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .switch > span.off {
@@ -65,7 +58,6 @@ input.check-toggle-round-flat + label {
   padding: 20px;
   width: 97px;
   height: 35px;
-  /* background-color: #f36f25; */
   background-color: rgb(48, 48, 49);
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
@@ -85,7 +77,6 @@ input.check-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  /* background-color: #f36f25; */
   background-color: rgb(48, 48, 49);
   -webkit--moz-border-radius: 60px;
   -ms-border-radius: 60px;
@@ -108,9 +99,6 @@ input.check-toggle-round-flat + label:after {
   -o-transition: margin 0.2s;
   transition: margin 0.2s;
 }
-
-/* input.check-toggle-round-flat:checked + label {
-} */
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 40px;
