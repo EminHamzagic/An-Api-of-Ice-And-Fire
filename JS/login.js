@@ -19,7 +19,7 @@ password.addEventListener("focus", () => {
   inputInfo[1].innerHTML = "&nbsp;";
 });
 
-document.getElementById("loginBtn").addEventListener("click", () => {
+const checkLogin = () => {
   if (username.value === "") {
     inputInfo[0].innerHTML = "Field must not be empty";
     username.style.borderColor = "red";
@@ -59,4 +59,16 @@ document.getElementById("loginBtn").addEventListener("click", () => {
         }
       });
   }
+};
+
+username.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") checkLogin();
+});
+
+password.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") checkLogin();
+});
+
+document.getElementById("loginBtn").addEventListener("click", () => {
+  checkLogin();
 });
