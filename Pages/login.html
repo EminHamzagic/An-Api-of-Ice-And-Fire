@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/login.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
     <style>
       @font-face {
         font-family: got;
@@ -13,8 +14,24 @@
     <title>Login</title>
   </head>
   <body>
+    <div id="header">
+      <img
+        class="changeToWhite"
+        id="logo"
+        src="https://1000logos.net/wp-content/uploads/2020/09/Game-of-Thrones-logo.png"
+      />
+      <div class="hbuttons">
+        <div class="hbtn">Home</div>
+      </div>
+      <div class="hamburger">
+        <span class="hbar"></span>
+        <span class="hbar"></span>
+        <span class="hbar"></span>
+      </div>
+    </div>
     <div id="loginContainer">
       <h1>Login</h1>
+      <p id="logInfo">You must be logged in to see other content</p>
       <div class="tField">
         <label for="username">Username</label>
         <input type="text" id="username" />
@@ -29,5 +46,7 @@
     </div>
     <script type="text/javascript" src="../Hashing script/md5-min.js"></script>
     <script src="../JS/login.js"></script>
+    <script src="../JS/header.js"></script>
+    <script src="../JS/redirectButtons.js"></script>
   </body>
 </html>
