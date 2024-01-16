@@ -109,7 +109,7 @@ body {
 }
 
 .tField input:focus {
-  outline: 2px solid rgb(57, 57, 58);
+  outline: 2px solid rgb(255, 255, 255);
 }
 
 .tFieldName {
@@ -142,7 +142,7 @@ body {
 }
 
 .tArea textarea:focus {
-  outline: none;
+  outline: 2px solid rgb(255, 255, 255);
   padding: 5px;
   font-family: sans-serif;
 }
