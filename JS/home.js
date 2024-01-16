@@ -7,10 +7,6 @@ async function slideCharacters() {
   return data;
 }
 
-if (!localStorage.getItem("loggedIn")) {
-  location.href = "login.html";
-}
-
 slideCharacters().then((data) => {
   const slidesContainer = document.getElementById("slides");
   data.map((el) => {
