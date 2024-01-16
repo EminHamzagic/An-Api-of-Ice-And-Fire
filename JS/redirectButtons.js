@@ -20,5 +20,25 @@ btns[4].addEventListener("click", () => {
 });
 
 btns[5].addEventListener("click", () => {
+  location.href = "home.html";
+});
+
+btns[6].addEventListener("click", () => {
+  location.href = "books.html";
+});
+
+btns[7].addEventListener("click", () => {
+  location.href = "characters.html";
+});
+
+btns[8].addEventListener("click", () => {
+  location.href = "houses.html";
+});
+
+btns[9].addEventListener("click", () => {
+  location.href = "contactUs.html";
+});
+
+btns[10].addEventListener("click", () => {
   location.href = "login.html";
 });

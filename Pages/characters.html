@@ -28,6 +28,9 @@
         font-family: got;
         src: url(../ImgsAndFonts/Game\ of\ Thrones.ttf);
       }
+      .unactive {
+        display: none;
+      }
     </style>
     <title>Characters</title>
   </head>
@@ -39,11 +42,16 @@
         src="https://1000logos.net/wp-content/uploads/2020/09/Game-of-Thrones-logo.png"
       />
       <div class="hbuttons">
-        <div class="hbtn">Home</div>
-        <div class="hbtn">Books</div>
-        <div class="hbtn current">Characters</div>
-        <div class="hbtn">Houses</div>
-        <div class="hbtn">Contact Us</div>
+        <div class="en hbtn">Home</div>
+        <div class="en hbtn">Books</div>
+        <div class="en hbtn current">Characters</div>
+        <div class="en hbtn">Houses</div>
+        <div class="en hbtn">Contact Us</div>
+        <div class="sr hbtn">Pocetna</div>
+        <div class="sr hbtn">Knjige</div>
+        <div class="sr hbtn current">Karakteri</div>
+        <div class="sr hbtn">Kuce</div>
+        <div class="sr hbtn">Kontakt</div>
         <div id="login" class="hbtn">Login</div>
         <div id="logout" class="hbtn">Logout</div>
         <div class="lanCon">
@@ -125,5 +133,6 @@
     <script src="../JS/redirectButtons.js"></script>
     <script src="../JS/header.js"></script>
     <script src="../JS/characters.js"></script>
+    <script src="../JS/languageSelector.js"></script>
   </body>
 </html>

@@ -7,6 +7,8 @@ async function slideCharacters() {
   return data;
 }
 
+var lan = JSON.parse(localStorage.getItem("language"));
+
 slideCharacters().then((data) => {
   const slidesContainer = document.getElementById("slides");
   data.map((el) => {
@@ -17,18 +19,43 @@ slideCharacters().then((data) => {
     else h1.innerHTML = el.aliases[0];
     const cardInfo = document.createElement("div");
     cardInfo.classList.add("cardInfo");
-    cardInfo.innerHTML += `<p>culture: ${
+
+    //Engleski jezik
+    cardInfo.innerHTML += `<p class="en ${lan ? "" : "unactive"}">culture: ${
       el.culture ? el.culture : "Unknown"
     }</p>`;
-    cardInfo.innerHTML += `<p>born: ${el.born ? el.born : "Unknown"}</p>`;
-    cardInfo.innerHTML += `<p>died: ${el.died ? el.died : "Unknown"}</p>`;
-    cardInfo.innerHTML += `<p>titles: ${
+    cardInfo.innerHTML += `<p class="en ${lan ? "" : "unactive"}">born: ${
+      el.born ? el.born : "Unknown"
+    }</p>`;
+    cardInfo.innerHTML += `<p class="en ${lan ? "" : "unactive"}">died: ${
+      el.died ? el.died : "Unknown"
+    }</p>`;
+    cardInfo.innerHTML += `<p class="en ${lan ? "" : "unactive"}">titles: ${
       el.titles[0] !== ""
         ? el.titles.length > 1
           ? el.titles[0] + ", ..."
           : el.titles[0]
         : "none"
     }</p>`;
+
+    //Srpski jezik
+    cardInfo.innerHTML += `<p class="sr ${lan ? "unactive" : ""}">kultura: ${
+      el.culture ? el.culture : "Unknown"
+    }</p>`;
+    cardInfo.innerHTML += `<p class="sr ${lan ? "unactive" : ""}">rodjen: ${
+      el.born ? el.born : "Unknown"
+    }</p>`;
+    cardInfo.innerHTML += `<p class="sr ${lan ? "unactive" : ""}">umro: ${
+      el.died ? el.died : "Unknown"
+    }</p>`;
+    cardInfo.innerHTML += `<p class="sr ${lan ? "unactive" : ""}">titule: ${
+      el.titles[0] !== ""
+        ? el.titles.length > 1
+          ? el.titles[0] + ", ..."
+          : el.titles[0]
+        : "none"
+    }</p>`;
+
     card.appendChild(h1);
     card.appendChild(cardInfo);
     slidesContainer.appendChild(card);
@@ -47,7 +74,6 @@ const showSlides = () => {
   for (let i = counter; i < counter + 3; i++) cards[i].style.display = "inline";
   for (let i = 0; i < 9; i++) {
     if (i !== counter && i !== counter + 1 && i !== counter + 2) {
-      // cards[i].style.transform = "scale(0.8)";
       cards[i].style.display = "none";
     }
   }

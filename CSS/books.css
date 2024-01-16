@@ -220,7 +220,7 @@ body {
   cursor: pointer;
 }
 
-#charMenu {
+.charMenu {
   max-height: 50%;
   background-color: rgb(18, 19, 24);
   border-radius: 10px;
@@ -238,7 +238,7 @@ body {
   pointer-events: none;
 }
 
-#charMenu::-webkit-scrollbar {
+.charMenu::-webkit-scrollbar {
   display: none;
 }
 
@@ -248,7 +248,7 @@ body {
   opacity: 1;
 }
 
-#charMenu p {
+.charMenu p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -282,7 +282,7 @@ body {
     text-align: center;
     align-self: center;
   }
-  #charMenu {
+  .charMenu {
     bottom: 3%;
     left: 52%;
   }

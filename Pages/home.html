@@ -19,6 +19,9 @@
         font-family: got;
         src: url(../ImgsAndFonts/Game\ of\ Thrones.ttf);
       }
+      .unactive {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -29,11 +32,16 @@
         src="https://1000logos.net/wp-content/uploads/2020/09/Game-of-Thrones-logo.png"
       />
       <div class="hbuttons">
-        <div class="hbtn current">Home</div>
-        <div class="hbtn">Books</div>
-        <div class="hbtn">Characters</div>
-        <div class="hbtn">Houses</div>
-        <div class="hbtn">Contact Us</div>
+        <div class="en hbtn current">Home</div>
+        <div class="en hbtn">Books</div>
+        <div class="en hbtn">Characters</div>
+        <div class="en hbtn">Houses</div>
+        <div class="en hbtn">Contact Us</div>
+        <div class="sr hbtn current">Pocetna</div>
+        <div class="sr hbtn">Knjige</div>
+        <div class="sr hbtn">Karakteri</div>
+        <div class="sr hbtn">Kuce</div>
+        <div class="sr hbtn">Kontakt</div>
         <div id="login" class="hbtn">Login</div>
         <div id="logout" class="hbtn">Logout</div>
         <div class="lanCon">
@@ -57,24 +65,34 @@
     </div>
     <div class="lcontainer">
       <div class="landingHome">
-        <h1>A Song of Ice and Fire</h1>
-        <p>
+        <h1 class="en">A Song of Ice and Fire</h1>
+        <h1 class="sr">Pesma leda i vatre</h1>
+        <p class="en">
           In the mythical continent of Westeros, several powerful families fight
           for control of the Seven Kingdoms. As conflict erupts in the kingdoms
           of men, an ancient enemy rises once again to threaten them all.
           Meanwhile, the last heirs of a recently usurped dynasty plot to take
           back their homeland from across the Narrow Sea.
         </p>
-        <p>
-          Learn more about various characters, published books, appearing houses
-          in this series of epic fantasy novels written by George R. R. Martin
+        <p class="sr">
+          Na mitskom kontinentu Vesteros bori se nekoliko moćnih porodica za
+          kontrolu nad Sedam kraljevstava. Dok sukobi izbijaju u kraljevstvima
+          od ljudi, drevni neprijatelj se ponovo diže da ih sve ugrozi. U
+          međuvremenu, poslednji naslednici nedavno uzurpirane zavere dinastije
+          vrati svoju otadžbinu preko Uskog mora.
+        </p>
+        <p class="en">
+          Saznajte više o različitim likovima, objavljenim knjigama, kućama koje
+          se pojavljuju u ovoj seriji epskih fantastičnih romana koje je napisao
+          Džordž R. R. Martin
         </p>
       </div>
     </div>
     <div class="container"></div>
     <div class="container infoImg">
-      <h1 class="title">Something about the series</h1>
-      <p>
+      <h1 class="title en">Something about the series</h1>
+      <h1 class="title sr">Nesto o serijalu</h1>
+      <p class="en">
         A Song of Ice and Fire is a series of epic fantasy novels by the
         American novelist and screenwriter George R. R. Martin. He began writing
         the first volume, A Game of Thrones, in 1991, publishing it in 1996.
@@ -84,12 +102,27 @@
         continues to write the sixth novel, titled The Winds of Winter. A
         seventh novel, A Dream of Spring, is planned to follow.
       </p>
-      <p>
+      <p class="sr">
+        Pesma leda i vatre je serija epskih fantastičnih romana Američki
+        romanopisac i scenarista Džordž R. R. Martin. Počeo je da piše prvi tom,
+        A Game of Thrones, 1991. godine, a objavio ga je 1996. godine. Martin je
+        prvobitno zamislio seriju kao trilogiju, ali je objavljen pet od
+        planiranih sedam tomova. Peti i najnoviji unos u serijal, Ples sa
+        zmajevima, objavljen je 2011. Martin nastavlja da piše šesti roman pod
+        nazivom Vetrovi zime. A Planirano je da sledi sedmi roman, San o
+        proleću.
+      </p>
+      <p class="en">
         A Song of Ice and Fire depicts a violent world dominated by political
         realism. What little supernatural power that remains is confined to the
         margins of the known world.
       </p>
-      <p>
+      <p class="sr">
+        Pesma leda i vatre prikazuje nasilni svet kojim dominiraju politički
+        realizam. Ono malo natprirodne moći što je ostalo ograničeno je na
+        margine poznatog sveta.
+      </p>
+      <p class="en">
         The novels are set on the fictional continents of Westeros and Essos.
         The story unfolds through a rotating set of subjective points of view,
         the success or survival of any one of which is never assured. Each
@@ -97,62 +130,106 @@
         group of characters that grows from nine in the first novel to 31 by the
         fifth.
       </p>
+      <p class="sr">
+        Radnja romana odvija se na izmišljenim kontinentima Vesteros i Esos.
+        Priča se odvija kroz rotirajući skup subjektivnih tačaka gledišta, uspeh
+        ili opstanak bilo kog od njih nikada nije zagarantovan. Svaki poglavlje
+        je ispričano iz ograničene perspektive trećeg lica, izvučeno iz a grupe
+        likova koja raste od devet u prvom romanu do 31 u petom.
+      </p>
     </div>
     <div class="container bookImg">
-      <h1 class="title">Books</h1>
-      <p>
-        As of 2023 more than 90 million copies in 47 languages had been sold.
-        The fourth and fifth volumes both reached the top of the New York Times
-        Best Seller lists when published in 2005 and 2011. Among the many
-        derived works number several prequel novellas, two series for
-        television, a comic book adaptation, and several card, board, and video
-        games.
+      <h1 class="title en">Books</h1>
+      <h1 class="title sr">Knjige</h1>
+      <p class="en">
+        Od 2023. godine prodato je više od 90 miliona primeraka na 47 jezika. I
+        četvrti i peti tom su dospeli na vrh Njujork tajmsa Liste
+        najprodavanijih kada su objavljene 2005. i 2011. Među mnogima izvedena
+        dela broje nekoliko prekuel novela, dve serije za televizija, adaptacija
+        stripa i nekoliko kartica, tabli i video zapisa igrice.
       </p>
-      <button onclick="window.location.href='books.html'">
+      <p class="sr">
+        Od 2023. godine prodato je više od 90 miliona primeraka na 47 jezika. I
+        četvrti i peti tom su dospeli na vrh Njujork tajmsa Liste
+        najprodavanijih kada su objavljene 2005. i 2011. Među mnogima izvedena
+        dela broje nekoliko prekuel novela, dve serije za televizija, adaptacija
+        stripa i nekoliko kartica, tabli i video zapisa igrice.
+      </p>
+      <button class="en" onclick="window.location.href='books.html'">
         Click to see more
+      </button>
+      <button class="sr" onclick="window.location.href='books.html'">
+        Klikni za vise
       </button>
     </div>
     <div class="container sl">
-      <h1 class="title">Characters</h1>
+      <h1 class="title en">Characters</h1>
+      <h1 class="title sr">Karakteri</h1>
       <div class="slides">
         <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
         <div id="slides" class="slideContainer"></div>
         <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
-      <button onclick="window.location.href='characters.html'">
+      <button class="en" onclick="window.location.href='characters.html'">
         Click to see more
+      </button>
+      <button class="sr" onclick="window.location.href='characters.html'">
+        Klikni za vise
       </button>
     </div>
     <div class="container housesImg">
-      <h1 class="title">Houses</h1>
-      <p>
+      <h1 class="title en">Houses</h1>
+      <h1 class="title sr">Kuce</h1>
+      <p class="en">
         In Westeros ultimate power derives from the King on the Iron Throne and
         descends through the Great Houses that rule the constituent regions of
         the continent to their vassals. There are nine Great Houses, and each of
         them have a number of vassal houses (sometimes also referred to as
         lesser houses) in their liege.
       </p>
-      <button onclick="window.location.href='houses.html'">
+      <p class="sr">
+        U Vesterosu konačna moć potiče od Kralja na gvozdenom prestolu i spušta
+        se kroz Velike kuće koje vladaju konstitutivnim regionima kontinent
+        svojim vazalima. Ima devet velikih kuća, i svaka od njih imaju niz
+        vazalnih kuća (ponekad se nazivaju i kao manjim kućama) u svom
+        gospodaru.
+      </p>
+      <button class="en" onclick="window.location.href='houses.html'">
         Click to see more
+      </button>
+      <button class="sr" onclick="window.location.href='houses.html'">
+        Klikni za vise
       </button>
     </div>
     <div class="footer">
-      <h1>
+      <h1 class="en">
         "When you play the game of thrones, you win or you die. There is no
         middle ground."
       </h1>
+      <h1 class="sr">
+        „Kada igras igru prestola, pobedis ili umires. Nema srednjeg puta“
+      </h1>
       <div class="fDiv">
         <p>&copy; Synapso. All rights reserved.</p>
-        <div>
-          <a class="foota" href="">Home</a>
-          <a class="foota" href="">Books</a>
-          <a class="foota" href="">Characters</a>
-          <a class="foota" href="">Houses</a>
+        <div class="en">
+          <a class="foota" href="home.html">Home</a>
+          <a class="foota" href="books.html">Books</a>
+          <a class="foota" href="characters.html">Characters</a>
+          <a class="foota" href="houses.html">Houses</a>
+          <a class="foota" href="contactUs.html">Contact Us</a>
+        </div>
+        <div class="sr">
+          <a class="foota" href="home.html">Pocetna</a>
+          <a class="foota" href="books.html">Knjige</a>
+          <a class="foota" href="characters.html">Karakteri</a>
+          <a class="foota" href="houses.html">Kuce</a>
+          <a class="foota" href="contactUs.html">Kontakt</a>
         </div>
       </div>
     </div>
     <script src="../JS/home.js"></script>
     <script src="../JS/redirectButtons.js"></script>
     <script src="../JS/header.js"></script>
+    <script src="../JS/languageSelector.js"></script>
   </body>
 </html>

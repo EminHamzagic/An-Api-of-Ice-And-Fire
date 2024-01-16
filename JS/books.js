@@ -10,6 +10,7 @@ if (!localStorage.getItem("loggedIn")) {
   location.href = "login.html";
 }
 
+var lan = JSON.parse(localStorage.getItem("language"));
 var booksRaw = [];
 
 getBooks().then((data) => {
@@ -33,6 +34,7 @@ getBooks().then((data) => {
 
   for (let i = 0; i < books.length; i++) {
     books[i].addEventListener("click", (e) => {
+      lan = JSON.parse(localStorage.getItem("language"));
       const index = e.target.getAttribute("data-id");
       const infoBox = document.getElementById("info");
       const infoTitle = document.getElementById("infoTitle");
@@ -40,38 +42,92 @@ getBooks().then((data) => {
       const infoP2 = document.getElementById("infoP2");
       infoP1.innerHTML = "";
       infoP2.innerHTML = "";
+
+      //Engleski jezik
       const p1 = document.createElement("p");
       p1.innerText = `Authors: ${booksRaw[index].authors.toString()}`;
       const p2 = document.createElement("p");
+      p1.classList.add("en", lan ? "&nbsp;" : "unactive");
       p2.innerText = `Country: ${booksRaw[index].country}`;
+      p2.classList.add("en", lan ? "&nbsp;" : "unactive");
       const p3 = document.createElement("p");
       p3.innerText = `ISBN: ${booksRaw[index].isbn}`;
+      p3.classList.add("en", lan ? "&nbsp;" : "unactive");
       const p4 = document.createElement("p");
       p4.innerText = `Media Type: ${booksRaw[index].mediaType}`;
+      p4.classList.add("en", lan ? "&nbsp;" : "unactive");
+
+      //Srpski jezik
+      const p1a = document.createElement("p");
+      p1a.innerText = `Autori: ${booksRaw[index].authors.toString()}`;
+      p1a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      const p2a = document.createElement("p");
+      p2a.innerText = `Zemlja: ${booksRaw[index].country}`;
+      p2a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      const p3a = document.createElement("p");
+      p3a.innerText = `ISBN: ${booksRaw[index].isbn}`;
+      p3a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      const p4a = document.createElement("p");
+      p4a.innerText = `Vrsta medija: ${booksRaw[index].mediaType}`;
+      p4a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      infoP1.append(p1, p2, p3, p4, p1a, p2a, p3a, p4a);
+
+      //Engleski jezik
       const p5 = document.createElement("p");
       p5.innerText = `Number of Pages: ${booksRaw[index].numberOfPages}`;
+      p5.classList.add("en", lan ? "&nbsp;" : "unactive");
       const p6 = document.createElement("p");
       p6.innerText = `Publisher: ${booksRaw[index].publisher}`;
+      p6.classList.add("en", lan ? "&nbsp;" : "unactive");
       const p7 = document.createElement("p");
       p7.innerText = `Released: ${booksRaw[index].released}`;
+      p7.classList.add("en", lan ? "&nbsp;" : "unactive");
       const p8 = document.createElement("p");
       p8.setAttribute("id", "povChar");
-      p8.setAttribute("title", "Click to see the list of pov characters");
       p8.innerText = `Pov Characters`;
-      p8.innerHTML += `<div id="charMenu"></div>`;
-      infoP1.append(p1, p2, p3, p4);
-      infoP2.append(p5, p6, p7, p8);
+      p8.classList.add("en", lan ? "&nbsp;" : "unactive");
+      p8.innerHTML += `<div class="charMenu"></div>`;
+
+      //Srpski jezik
+      const p5a = document.createElement("p");
+      p5a.innerText = `Broj stranica: ${booksRaw[index].numberOfPages}`;
+      p5a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      const p6a = document.createElement("p");
+      p6a.innerText = `Izdavac: ${booksRaw[index].publisher}`;
+      p6a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      const p7a = document.createElement("p");
+      p7a.innerText = `Objavljeno: ${booksRaw[index].released}`;
+      p7a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      const p8a = document.createElement("p");
+      p8a.setAttribute("id", "povChar");
+      p8a.innerText = `Pov Karakteri`;
+      p8a.classList.add("sr", lan ? "unactive" : "&nbsp;");
+      p8a.innerHTML += `<div class="charMenu"></div>`;
+
+      infoP2.append(p5, p6, p7, p8, p5a, p6a, p7a, p8a);
 
       p8.addEventListener("click", () => {
         p8.classList.toggle("active");
       });
 
-      const charMenu = document.getElementById("charMenu");
-      charMenu.innerHTML = "";
+      p8a.addEventListener("click", () => {
+        p8a.classList.toggle("active");
+      });
+
+      const charMenu = document.getElementsByClassName("charMenu");
+      charMenu[0].innerHTML = "";
+      charMenu[1].innerHTML = "";
+      if (booksRaw[index].povCharacters.length === 0) {
+        charMenu[0].innerHTML += `<p>None</p>`;
+        charMenu[1].innerHTML += `<p>Nijedan</p>`;
+      }
       for (let i = 0; i < booksRaw[index].povCharacters.length; i++) {
         fetch(booksRaw[index].povCharacters[i])
           .then((res) => res.json())
-          .then((data) => (charMenu.innerHTML += `<p>${data.name}</p>`));
+          .then((data) => {
+            charMenu[0].innerHTML += `<p>${data.name}</p>`;
+            charMenu[1].innerHTML += `<p>${data.name}</p>`;
+          });
       }
       infoTitle.innerText = booksRaw[index].name;
       infoBox.classList.toggle("active");
