@@ -1,3 +1,7 @@
+if (!localStorage.getItem("loggedIn")) {
+  location.href = "login.html";
+}
+
 var page = 1;
 var housesRaw = [];
 

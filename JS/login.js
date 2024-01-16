@@ -1,9 +1,9 @@
-fetch("https://eminhamzagic.github.io/An-Api-of-Ice-And-Fire/accounts.json")
-  .then((res) => res.json())
-  .then((data) => (loginData = data));
+// fetch("https://eminhamzagic.github.io/An-Api-of-Ice-And-Fire/accounts.json")
+//   .then((res) => res.json())
+//   .then((data) => (loginData = data));
 
-var loginData = [];
-hash = hex_md5("genshin123");
+// var loginData = [];
+// hash = hex_md5("genshin123");
 
 const inputInfo = document.getElementsByClassName("inputInfo");
 const username = document.getElementById("username");
@@ -44,6 +44,8 @@ document.getElementById("loginBtn").addEventListener("click", () => {
             if (users[i].password == inputPassword) {
               location.href = "home.html";
               flag = !flag;
+              localStorage.setItem("loggedIn", true);
+
               break;
             }
           }

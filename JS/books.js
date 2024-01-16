@@ -6,6 +6,10 @@ async function getBooks() {
   return data;
 }
 
+if (!localStorage.getItem("loggedIn")) {
+  location.href = "login.html";
+}
+
 var booksRaw = [];
 
 getBooks().then((data) => {

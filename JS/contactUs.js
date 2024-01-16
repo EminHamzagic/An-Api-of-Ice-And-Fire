@@ -1,3 +1,7 @@
+if (!localStorage.getItem("loggedIn")) {
+  location.href = "login.html";
+}
+
 const inputInfo = document.getElementsByClassName("inputInfo");
 const fname = document.getElementById("fname");
 const lname = document.getElementById("lname");
