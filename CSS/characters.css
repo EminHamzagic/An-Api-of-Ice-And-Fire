@@ -98,6 +98,10 @@ body {
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
+.lockScroll {
+  overflow: hidden;
+}
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
@@ -121,9 +125,10 @@ body {
 }
 
 #info {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  width: 90%;
+  height: 80%;
+  left: 5%;
   top: 100%;
   background-color: rgb(28, 29, 31);
   opacity: 0;
@@ -132,7 +137,7 @@ body {
 
 #info.active {
   opacity: 100;
-  top: 0;
+  top: 12vh;
 }
 
 #closeBtn {
@@ -320,6 +325,7 @@ label {
     grid-template-rows: repeat(15, 1fr);
   }
   #info {
+    height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -339,7 +345,7 @@ label {
     width: 76%;
     text-align: center;
     padding: 20px;
-    font-size: 1.6em;
+    font-size: 1.5em;
   }
   #infoCon {
     flex-direction: column;

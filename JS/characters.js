@@ -28,6 +28,7 @@ const loadCharacters = (data) => {
     const name = document.createElement("h1");
     name.innerText = el.name ? el.name : '"' + el.aliases[0] + '"';
     item.addEventListener("click", () => {
+      document.documentElement.classList.toggle("lockScroll");
       showInfo(charactersRaw[i]);
     });
     item.appendChild(name);
@@ -50,6 +51,7 @@ const loadCharacters = (data) => {
     const info = document.getElementById("info");
     info.classList.toggle("active");
     infoContainer.classList.toggle("active");
+    document.documentElement.classList.toggle("lockScroll");
   });
 };
 
