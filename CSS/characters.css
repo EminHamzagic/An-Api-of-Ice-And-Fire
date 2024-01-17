@@ -151,6 +151,18 @@ body {
   cursor: pointer;
 }
 
+#apply,
+#reset {
+  transition: 0.2s all ease;
+}
+
+#apply:active,
+#reset:active {
+  background-color: rgb(102, 102, 104);
+  outline: none;
+  color: white;
+}
+
 .bar {
   display: block;
   width: 25px;

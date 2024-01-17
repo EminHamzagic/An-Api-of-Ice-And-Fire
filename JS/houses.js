@@ -5,6 +5,7 @@ if (!localStorage.getItem("loggedIn")) {
 var page = 1;
 var housesRaw = [];
 
+var lan = JSON.parse(localStorage.getItem("language"));
 const container = document.getElementById("housesContainer");
 const loadingScreen = document.getElementById("loading");
 var filters = "";
@@ -207,3 +208,21 @@ document.getElementById("reset").addEventListener("click", () => {
 });
 
 getHouses().then((data) => loadHouses(data));
+
+const setLan = (state) => {
+  if (state) {
+    document.getElementById("btn").innerText = "Filters";
+    document.getElementById("next").innerText = "Next";
+    document.getElementById("prev").innerText = "Prev";
+  } else {
+    document.getElementById("btn").innerText = "Filteri";
+    document.getElementById("next").innerText = "Sledeca";
+    document.getElementById("prev").innerText = "Prethodna";
+  }
+};
+
+setLan(lan);
+
+document.getElementById("language-toggle").addEventListener("click", (e) => {
+  setLan(e.target.checked);
+});
