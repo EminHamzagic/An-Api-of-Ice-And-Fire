@@ -1,8 +1,6 @@
 .lanCon {
-  /* width: 100%; */
   height: 100%;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -119,4 +117,11 @@ input.check-toggle-round-flat:checked + label:after {
 
 label {
   margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1600px) {
+  .switch > span {
+    top: 1px;
+    font-size: 18px;
+  }
 }
