@@ -63,35 +63,52 @@
             <span class="bar"></span>
             <span class="bar"></span>
           </div>
-          <h1>Message sent</h1>
-          <p>
+          <h1 class="en">Message sent</h1>
+          <h1 class="sr">Poruka poslata</h1>
+          <p class="en">
             Thank you for your feedback, we will try to give you a response as
             soon as possible
           </p>
-          <p>
+          <p class="sr">
+            Hvala vam na povratnim informacijama, pokusacemo da vam damo odgovor
+            sto pre
+          </p>
+          <p class="en">
             In the meantime, please free to continue using this website for any
             information you need
+          </p>
+          <p class="sr">
+            U medjuvremenu, slobodno nastavite da koristite ovaj veb sajt za
+            bilo koje informacije koje su vam potrebne
           </p>
         </div>
       </div>
       <div class="contactUsDiv">
         <div class="contactUsInfo">
-          <h1>Contact Us</h1>
-          <p>
+          <h1 class="ttl en">Contact Us</h1>
+          <h1 class="ttl sr">Kontaktirajte nas</h1>
+          <p class="en">
             If you have any more questions, please fill in your name and last
             name, email and message you want to send, and we will try to get in
             touch as soon as we can so we could help
+          </p>
+          <p class="sr">
+            Ako imate jos pitanja, unesite svoje ime i prezime, imejl i poruku
+            koju zelite da posaljete, a mi cemo pokusati da odgovorimo sto pre
+            možemo da bismo mogli da vam pomognemo
           </p>
           <button id="contactBtn">Send Message</button>
         </div>
         <div class="tFieldName">
           <div class="tField">
-            <label for="fname">First Name</label>
+            <label class="en" for="fname">First Name</label>
+            <label class="sr" for="fname">Ime</label>
             <input placeholder="First Name" type="text" id="fname" />
             <p class="inputInfo">&nbsp;</p>
           </div>
           <div class="tField">
-            <label for="lname">Last Name</label>
+            <label class="en" for="lname">Last Name</label>
+            <label class="sr" for="lname">Prezime</label>
             <input placeholder="Last Name" type="text" id="lname" />
             <p class="inputInfo">&nbsp;</p>
           </div>
@@ -102,9 +119,10 @@
           <p class="inputInfo">&nbsp;</p>
         </div>
         <div class="tArea">
-          <label for="msg">Message:</label>
+          <label class="en" for="msg">Message</label>
+          <label class="sr" for="msg">Poruka</label>
           <textarea
-            placeholder="Message"
+            placeholder="Type your message here"
             name="msg"
             id="msg"
             cols="30"

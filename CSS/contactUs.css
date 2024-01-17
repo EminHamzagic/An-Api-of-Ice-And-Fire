@@ -48,11 +48,12 @@ body {
   align-items: center;
 }
 
-.contactUsInfo h1 {
+.ttl {
   height: 20%;
-  color: white;
   display: flex;
   align-items: center;
+  color: white;
+  text-align: center;
 }
 
 .contactUsInfo p {

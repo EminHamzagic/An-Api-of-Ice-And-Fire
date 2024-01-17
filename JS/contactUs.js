@@ -2,6 +2,7 @@ if (!localStorage.getItem("loggedIn")) {
   location.href = "login.html";
 }
 
+var lan = JSON.parse(localStorage.getItem("language"));
 const inputInfo = document.getElementsByClassName("inputInfo");
 const fname = document.getElementById("fname");
 const lname = document.getElementById("lname");
@@ -44,22 +45,25 @@ msg.addEventListener("focus", () => {
 var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 var nameRegex = /^[a-zA-Z]+$/;
 var btn = document.getElementById("contactBtn");
+var emailErr = "Not a valid adress",
+  nameErr = "Only characters",
+  msgErr = "Message must contain text!";
 
 btn.addEventListener("click", () => {
   if (!emailRegex.test(email.value)) {
-    inputInfo[2].innerHTML = "Not a valid adress";
+    inputInfo[2].innerHTML = emailErr;
     inputInfo[2].style.color = "red";
   }
   if (!nameRegex.test(fname.value)) {
-    inputInfo[0].innerHTML = "Only characters";
+    inputInfo[0].innerHTML = nameErr;
     inputInfo[0].style.color = "red";
   }
   if (!nameRegex.test(lname.value)) {
-    inputInfo[1].innerHTML = "Only characters";
+    inputInfo[1].innerHTML = nameErr;
     inputInfo[1].style.color = "red";
   }
   if (!msg.value) {
-    inputInfo[3].innerHTML = "Must contain a message!";
+    inputInfo[3].innerHTML = msgErr;
     inputInfo[3].style.color = "red";
   }
   if (
@@ -78,4 +82,31 @@ btn.addEventListener("click", () => {
 
 document.getElementById("closeBtn").addEventListener("click", () => {
   document.getElementById("response").classList.toggle("active");
+});
+
+const setLan = (state) => {
+  console.log(fname.placeHolder);
+  if (state) {
+    document.getElementById("contactBtn").innerText = "Send Message";
+    fname.placeholder = "First Name";
+    lname.placeholder = "Last Name";
+    msg.placeholder = "Type your message here";
+    nameErr = "Only characters";
+    emailErr = "Not a valid adress";
+    msgErr = "Message must contain text!";
+  } else {
+    document.getElementById("contactBtn").innerText = "Posalji poruku";
+    fname.placeholder = "Ime";
+    lname.placeholder = "Prezime";
+    msg.placeholder = "Napisi svoju poruku ovde";
+    nameErr = "Samo karakteri";
+    emailErr = "Nije validna email adresa";
+    msgErr = "Poruka mora sadrzati tekst!";
+  }
+};
+
+setLan(lan);
+
+document.getElementById("language-toggle").addEventListener("click", (e) => {
+  setLan(e.target.checked);
 });

@@ -1,13 +1,7 @@
-// fetch("https://eminhamzagic.github.io/An-Api-of-Ice-And-Fire/accounts.json")
-//   .then((res) => res.json())
-//   .then((data) => (loginData = data));
-
-// var loginData = [];
-// hash = hex_md5("genshin123");
-
 const inputInfo = document.getElementsByClassName("inputInfo");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
+var lan = JSON.parse(localStorage.getItem("language"));
 
 username.addEventListener("focus", () => {
   username.style.borderColor = "rgb(35, 35, 36)";
@@ -20,12 +14,17 @@ password.addEventListener("focus", () => {
 });
 
 const checkLogin = () => {
+  lan = JSON.parse(localStorage.getItem("language"));
   if (username.value === "") {
-    inputInfo[0].innerHTML = "Field must not be empty";
+    inputInfo[0].innerHTML = lan
+      ? "Field must not be empty"
+      : "Polje ne sme biti prazno";
     username.style.borderColor = "red";
   }
   if (password.value === "") {
-    inputInfo[1].innerHTML = "Field must not be empty";
+    inputInfo[1].innerHTML = lan
+      ? "Field must not be empty"
+      : "Polje ne sme biti prazno";
     password.style.borderColor = "red";
   }
 
@@ -50,11 +49,13 @@ const checkLogin = () => {
             }
           }
           if (flag) {
-            inputInfo[1].innerHTML = "Wrong password";
+            inputInfo[1].innerHTML = lan ? "Wrong password" : "Pogresna sifra";
             password.style.borderColor = "red";
           }
         } else {
-          inputInfo[0].innerHTML = "Wrong username";
+          inputInfo[0].innerHTML = lan
+            ? "Wrong username"
+            : "Pogresno korisnicko ime";
           username.style.borderColor = "red";
         }
       });
@@ -71,4 +72,18 @@ password.addEventListener("keydown", (e) => {
 
 document.getElementById("loginBtn").addEventListener("click", () => {
   checkLogin();
+});
+
+const setLan = (state) => {
+  if (state) {
+    document.getElementById("loginBtn").innerText = "Login";
+  } else {
+    document.getElementById("loginBtn").innerText = "Prijavi se";
+  }
+};
+
+setLan(lan);
+
+document.getElementById("language-toggle").addEventListener("click", (e) => {
+  setLan(e.target.checked);
 });
