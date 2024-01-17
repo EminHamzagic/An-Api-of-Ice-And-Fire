@@ -9,7 +9,6 @@ lnBtn.addEventListener("click", (e) => {
   sr = document.getElementsByClassName("sr");
   localStorage.setItem("language", e.target.checked);
   if (e.target.checked) {
-    console.log("object");
     for (let i = 0; i < en.length; i++) {
       en[i].classList.toggle("unactive");
     }
