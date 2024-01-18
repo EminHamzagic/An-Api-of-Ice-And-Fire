@@ -297,8 +297,8 @@ body {
     width: 90%;
     align-items: center;
   }
-  .fDiv div {
-    width: 45%;
+  .fBtns {
+    width: 55%;
     display: flex;
     justify-content: space-between;
     align-items: center;
