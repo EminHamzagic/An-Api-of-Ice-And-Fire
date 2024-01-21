@@ -136,7 +136,7 @@ window.onscroll = () => {
     topBtn.style.pointerEvents = "all";
   } else {
     topBtn.style.opacity = "0";
-    topBtn.style.bottom = "-0px";
+    topBtn.style.bottom = "-80px";
     topBtn.style.pointerEvents = "none";
   }
 };
