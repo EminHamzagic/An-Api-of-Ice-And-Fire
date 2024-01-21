@@ -33,7 +33,7 @@ body {
   background-color: rgb(28, 29, 31);
   display: flex;
   align-items: center;
-  padding-left: 8px;
+  padding: 0 8px 0 8px;
   transition: 0.2s all ease-in-out;
   animation-name: zoomIn;
   animation-duration: 0.2s;
