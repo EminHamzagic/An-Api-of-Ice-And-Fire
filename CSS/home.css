@@ -247,7 +247,7 @@ body {
   font-size: 30px;
   border-radius: 10px;
   box-shadow: 3px 3px 5px black;
-  transition: 0.2s all ease;
+  transition: 0.4s all ease;
   opacity: 0;
   pointer-events: none;
 }
