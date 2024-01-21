@@ -5,6 +5,10 @@
   font-family: got;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   background-color: rgb(18, 19, 24);
@@ -151,7 +155,6 @@ body {
 
 .cardInfo p {
   font-size: 16px;
-  font-style: italic;
   color: #fffde1;
   width: 90%;
 }
@@ -231,6 +234,28 @@ body {
 .foota {
   color: white;
   font-family: sans-serif;
+}
+
+#topBtn {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: none;
+  position: fixed;
+  bottom: -80px;
+  right: 20px;
+  font-size: 30px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px black;
+  transition: 0.2s all ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#topBtn:hover {
+  background-color: rgb(48, 48, 49);
+  color: white;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
@@ -337,5 +362,10 @@ body {
   }
   .footer h1 {
     font-size: 30px;
+  }
+  #topBtn {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
   }
 }

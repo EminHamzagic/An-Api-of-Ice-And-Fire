@@ -118,3 +118,25 @@ slides.addEventListener("touchend", (e) => {
   touchendX = e.changedTouches[0].screenX;
   checkDirection();
 });
+
+const topBtn = document.getElementById("topBtn");
+
+topBtn.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+
+window.onscroll = () => {
+  if (
+    document.body.scrollTop > 400 ||
+    document.documentElement.scrollTop > 400
+  ) {
+    topBtn.style.opacity = "100";
+    topBtn.style.bottom = "20px";
+    topBtn.style.pointerEvents = "all";
+  } else {
+    topBtn.style.opacity = "0";
+    topBtn.style.bottom = "-0px";
+    topBtn.style.pointerEvents = "none";
+  }
+};
