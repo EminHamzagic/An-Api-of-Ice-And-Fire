@@ -17,8 +17,8 @@
 }
 
 #logo {
-  width: 11%;
-  height: 90%;
+  height: 5rem;
+  max-width: 10rem;
 }
 
 .changeToWhite {
@@ -35,14 +35,14 @@
 .hbtn {
   padding: 0 15px 0 15px;
   margin: 0 2.5px 0 2.5px;
-  height: 65%;
+  height: 2.5rem;
   border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: white;
-  font-size: 14px;
+  font-size: 0.9rem;
   transition: 0.2s all ease;
   cursor: pointer;
   user-select: none;
@@ -69,7 +69,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #logo {
     width: 50%;
   }
@@ -137,12 +137,5 @@
   }
   .lanCon {
     padding-bottom: 10px;
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  .hbtn {
-    font-size: 26px;
-    height: 45%;
   }
 }

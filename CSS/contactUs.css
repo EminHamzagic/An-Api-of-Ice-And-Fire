@@ -49,6 +49,7 @@ body {
 }
 
 .ttl {
+  font-size: 2rem;
   height: 20%;
   display: flex;
   align-items: center;
@@ -59,18 +60,17 @@ body {
 .contactUsInfo p {
   color: white;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.2rem;
   font-family: sans-serif;
   width: 80%;
-  padding-top: 10%;
-  padding-bottom: 23.5%;
+  height: 55%;
 }
 
 .contactUsDiv button {
   border: none;
   border-radius: 5px;
   width: 80%;
-  height: 15%;
+  min-height: 15%;
   transition: 0.2s all ease;
 }
 
@@ -178,8 +178,8 @@ body {
 
 .resInfo {
   position: relative;
-  width: 40%;
-  height: 50%;
+  width: 30%;
+  height: 30%;
   padding: 20px;
   top: 10%;
   background-color: rgb(48, 48, 49);
@@ -223,9 +223,6 @@ body {
 }
 
 @media only screen and (min-width: 1600px) {
-  .contactUsInfo h1 {
-    font-size: 45px;
-  }
   .contactUsInfo p {
     font-size: 25px;
     padding-bottom: 32%;
