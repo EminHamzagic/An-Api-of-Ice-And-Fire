@@ -244,7 +244,9 @@ const createInfoData = (char, books, allegiances, povBooks, Dspouse) => {
   }`;
   povbook.classList.add("en", lan ? "&nbsp;" : "unactive");
   const tv = document.createElement("p");
-  tv.innerText = `Tv Series Appearances: ${char.tvSeries.toString()}`;
+  tv.innerText = `Tv Series Appearances: ${
+    char.tvSeries[0] === "" ? "None" : char.tvSeries.toString()
+  }`;
   tv.classList.add("en", lan ? "&nbsp;" : "unactive");
 
   //Srpski jezik
@@ -262,7 +264,9 @@ const createInfoData = (char, books, allegiances, povBooks, Dspouse) => {
   }`;
   povbook1.classList.add("sr", lan ? "unactive" : "&nbsp;");
   const tv1 = document.createElement("p");
-  tv1.innerText = `Pojavljivanja u TV seriji: ${char.tvSeries.toString()}`;
+  tv1.innerText = `Pojavljivanja u TV seriji: ${
+    char.tvSeries[0] === "" ? "Nema" : char.tvSeries.toString()
+  }`;
   tv1.classList.add("sr", lan ? "unactive" : "&nbsp;");
 
   infoP3.append(
