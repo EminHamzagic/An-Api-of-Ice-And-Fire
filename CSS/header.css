@@ -19,6 +19,7 @@
 #logo {
   height: 5rem;
   max-width: 10rem;
+  cursor: pointer;
 }
 
 .changeToWhite {
