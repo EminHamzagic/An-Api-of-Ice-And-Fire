@@ -197,6 +197,10 @@ body {
   padding: 4rem 5.5rem 4rem 5.5rem;
 }
 
+.sl .title {
+  padding-left: 4rem;
+}
+
 .sl button {
   align-self: center;
 }
