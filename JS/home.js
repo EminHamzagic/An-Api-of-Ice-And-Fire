@@ -15,8 +15,7 @@ slideCharacters().then((data) => {
     const card = document.createElement("div");
     card.classList.add("card");
     const h1 = document.createElement("h1");
-    if (el.name !== "") h1.innerHTML = el.name;
-    else h1.innerHTML = el.aliases[0];
+    h1.innerHTML = el.name ? el.name : el.aliases[0];
     const cardInfo = document.createElement("div");
     cardInfo.classList.add("cardInfo");
 
