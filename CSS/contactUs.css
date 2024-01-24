@@ -247,9 +247,9 @@ body {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   body {
-    height: 130vh;
+    height: 160vh;
   }
   .contactUsDiv {
     width: 90%;
@@ -263,9 +263,10 @@ body {
   }
   .contactUsInfo p {
     padding-bottom: 10%;
+    font-size: 1rem;
   }
   .contactUsInfo button {
-    height: 30%;
+    height: 3.5rem;
     width: 90%;
     font-size: 18px;
   }

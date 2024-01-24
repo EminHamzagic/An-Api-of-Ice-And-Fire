@@ -110,7 +110,7 @@ body {
 
 #info {
   width: 90%;
-  height: 75%;
+  height: 80%;
   background-color: rgb(28, 29, 31);
   position: fixed;
   top: 100%;
@@ -127,8 +127,6 @@ body {
   display: flex;
   top: 14.5%;
   opacity: 100;
-  /* animation-name: zoomIn;
-  animation-duration: 0.2s; */
   pointer-events: all;
 }
 
@@ -215,7 +213,7 @@ body {
 
 #infoP1 p,
 #infoP2 p {
-  font-size: 2rem;
+  font-size: 1.5 rem;
   font-family: sans-serif;
 }
 
