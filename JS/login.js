@@ -10,8 +10,6 @@ username.addEventListener("focus", () => {
 
 password.addEventListener("focus", () => {
   document.getElementById("inputBox").style.borderColor = "rgb(35, 35, 36)";
-  // document.getElementById("inputBox").style.outline =
-  //   "1px solid rgb(255, 255, 255)";
   password.style.borderColor = "rgb(35, 35, 36)";
   inputInfo[1].innerHTML = "&nbsp;";
 });
