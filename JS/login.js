@@ -9,6 +9,9 @@ username.addEventListener("focus", () => {
 });
 
 password.addEventListener("focus", () => {
+  document.getElementById("inputBox").style.borderColor = "rgb(35, 35, 36)";
+  // document.getElementById("inputBox").style.outline =
+  //   "1px solid rgb(255, 255, 255)";
   password.style.borderColor = "rgb(35, 35, 36)";
   inputInfo[1].innerHTML = "&nbsp;";
 });
@@ -25,7 +28,7 @@ const checkLogin = () => {
     inputInfo[1].innerHTML = lan
       ? "Field must not be empty"
       : "Polje ne sme biti prazno";
-    password.style.borderColor = "red";
+    document.getElementById("inputBox").style.borderColor = "red";
   }
 
   if (username.value && password.value) {
@@ -50,7 +53,7 @@ const checkLogin = () => {
           }
           if (flag) {
             inputInfo[1].innerHTML = lan ? "Wrong password" : "Pogresna sifra";
-            password.style.borderColor = "red";
+            document.getElementById("inputBox").style.borderColor = "red";
           }
         } else {
           inputInfo[0].innerHTML = lan
@@ -86,4 +89,17 @@ setLan(lan);
 
 document.getElementById("language-toggle").addEventListener("click", (e) => {
   setLan(e.target.checked);
+});
+
+document.getElementById("showPass").addEventListener("click", () => {
+  const btn = document.getElementById("showPass");
+  if (btn.classList.contains("fa-eye")) {
+    password.type = "text";
+    btn.classList.remove("fa-eye");
+    btn.classList.add("fa-eye-slash");
+  } else {
+    password.type = "password";
+    btn.classList.remove("fa-eye-slash");
+    btn.classList.add("fa-eye");
+  }
 });
