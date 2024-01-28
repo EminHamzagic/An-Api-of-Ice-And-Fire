@@ -1,3 +1,5 @@
+localStorage.setItem("page", "characters");
+
 if (!localStorage.getItem("loggedIn")) {
   location.href = "login.html";
 }

@@ -1,3 +1,5 @@
+localStorage.setItem("page", "houses");
+
 if (!localStorage.getItem("loggedIn")) {
   location.href = "login.html";
 }

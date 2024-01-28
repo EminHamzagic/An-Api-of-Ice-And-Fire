@@ -7,6 +7,8 @@ async function slideCharacters() {
   return data;
 }
 
+localStorage.setItem("page", "home");
+
 var lan = JSON.parse(localStorage.getItem("language"));
 
 slideCharacters().then((data) => {

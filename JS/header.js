@@ -1,6 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
 const hbtns = document.querySelector(".hbuttons");
 const header = document.getElementById("header");
+var lan = JSON.parse(localStorage.getItem("language"));
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
@@ -15,14 +16,19 @@ window.addEventListener("scroll", () => {
 });
 
 if (localStorage.getItem("loggedIn")) {
-  document.getElementById("login").style.display = "none";
-  document.getElementById("logout").style.display = "flex";
+  document.getElementsByClassName("login")[0].style.display = "none";
+  document.getElementsByClassName("login")[1].style.display = "none";
 } else {
-  document.getElementById("login").style.display = "flex";
-  document.getElementById("logout").style.display = "none";
+  document.getElementsByClassName("logout")[0].style.display = "none";
+  document.getElementsByClassName("logout")[1].style.display = "none";
 }
 
-document.getElementById("logout").addEventListener("click", () => {
+document.getElementsByClassName("logout")[0].addEventListener("click", () => {
+  localStorage.removeItem("loggedIn");
+  location.href = "login.html";
+});
+
+document.getElementsByClassName("logout")[1].addEventListener("click", () => {
   localStorage.removeItem("loggedIn");
   location.href = "login.html";
 });

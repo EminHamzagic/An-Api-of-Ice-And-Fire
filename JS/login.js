@@ -30,6 +30,7 @@ const checkLogin = () => {
   }
 
   if (username.value && password.value) {
+    const page = localStorage.getItem("page");
     fetch("https://eminhamzagic.github.io/An-Api-of-Ice-And-Fire/accounts.json")
       .then((res) => res.json())
       .then((data) => {
@@ -42,7 +43,7 @@ const checkLogin = () => {
           let flag = true;
           for (let i = 0; i < users.length; i++) {
             if (users[i].password == inputPassword) {
-              location.href = "home.html";
+              location.href = `${page}.html`;
               flag = !flag;
               localStorage.setItem("loggedIn", true);
 
@@ -100,4 +101,16 @@ document.getElementById("showPass").addEventListener("click", () => {
     btn.classList.remove("fa-eye-slash");
     btn.classList.add("fa-eye");
   }
+});
+
+document.getElementById("logo").addEventListener("click", () => {
+  location.href = "home.html";
+});
+
+const btns = document.getElementsByClassName("hbtn");
+btns[0].addEventListener("click", () => {
+  location.href = "home.html";
+});
+btns[1].addEventListener("click", () => {
+  location.href = "home.html";
 });

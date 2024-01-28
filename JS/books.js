@@ -6,6 +6,8 @@ async function getBooks() {
   return data;
 }
 
+localStorage.setItem("page", "books");
+
 if (!localStorage.getItem("loggedIn")) {
   location.href = "login.html";
 }
